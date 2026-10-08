@@ -10,7 +10,7 @@ He sido contratada como Data Engineer y Analista BI por el CEO de una startup de
 ---
 Los datos originales se pueden encontrar [aquí](https://github.com/IanCN-23/dalatam_ed3_TPI_Python/tree/main).
 
-Primero descargué y descomprimí el archivo ZIP que contenía los datasets. Luego, creé la carpeta **Trabajo-Final-Python** como espacio de trabajo y añadí los archivos `restaurant-menus.csv` y `restaurants.csv`, que serán utilizados para desarrollar el proceso ETL.
+Primero descargué y descomprimí el archivo ZIP que contenía los datasets. Luego, creé la carpeta **Bances-proyecto-etl-delivery.** como espacio de trabajo y añadí los archivos `restaurant-menus.csv` y `restaurants.csv`, que serán utilizados para desarrollar el proceso ETL.
 
 ## Librerías utilizadas
 ---
@@ -41,7 +41,7 @@ Archivo de restaurante
 import pandas as pd
 
 # Identifico la ruta del archivo de restaurantes
-url_restaurante = "/Workspace/Users/bances27caro@gmail.com/CURSO_PHYTON/Trabajo-Final-Python/restaurants.csv/restaurants.csv"
+url_restaurante = "/Workspace/Users/bances27caro@gmail.com/CURSO_PHYTON/Bances-proyecto-etl-delivery./restaurants.csv/restaurants.csv"
 
 # Cargo el archivo
 df_restaurantes = pd.read_csv(url_restaurante)
@@ -64,7 +64,7 @@ Archivo de menús, aquí se debe unir las 10 partes.
 import pandas as pd
 
 # Ruta de la carpeta donde están las partes de los menús
-ruta_menus = "/Workspace/Users/bances27caro@gmail.com/CURSO_PHYTON/Trabajo-Final-Python/restaurant-menus.csv"
+ruta_menus = "/Workspace/Users/bances27caro@gmail.com/CURSO_PHYTON/Bances-proyecto-etl-delivery./restaurant-menus.csv"
 
 # Lista con los nombres de los 10 archivos
 archivos_menus = [
@@ -250,6 +250,7 @@ display(df_restaurantes[["score", "category"]].head(10))
 | 4.3 | mexican, breakfast and brunch, burritos |
 
 Para comprobar que ya no quedan score nulos ni ceros:
+
 ```python
 print("Valores nulos en score:", df_restaurantes["score"].isna().sum())
 print("Scores iguales a 0:", (df_restaurantes["score"] == 0).sum())
